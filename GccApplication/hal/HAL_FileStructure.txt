@@ -1,0 +1,11 @@
+HAL
+	hal_led
+	hal_button
+	hal_sevenseg
+	hal_keypad
+	hal_lcd
+
+
+HAL-C
+	hal_common
+
