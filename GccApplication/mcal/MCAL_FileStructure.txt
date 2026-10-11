@@ -1,0 +1,17 @@
+MCAL
+	mcal_dio
+
+
+MCAL-C
+	mcal_registers
+
+
+MCAL-G
+	mcal_config
+	mcal_eeprom
+	mcal_interrupt
+	mcal_timers
+	mcal_adc
+	mcal_usart
+	mcal_spi
+	mcal_i2c
