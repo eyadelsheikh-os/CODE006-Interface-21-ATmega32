@@ -6,33 +6,14 @@ A layered driver library for the **ATmega32** (8 MHz), written from scratch in C
 
 ## Architecture
 
-```
-┌──────────────────────────────────────────────────────┐
-│                       APP                            │
-└───────────────┬──────────────────────┬───────────────┘
-                │                      │
-        ┌───────▼──────┐        ┌──────▼──────┐
-        │    HAL-C     │◄──────►│     HAL     │
-        └───────┬──────┘        └──────┬──────┘
-                │                      │
-        ┌───────▼──────┐        ┌──────▼──────┐        ┌───────────┐
-        │   MCAL-C     │        │    MCAL     │───────►│  MCAL-G   │
-        │ mcal_registers        │  mcal_dio   │        │mcal_interrupts
-        └──────────────┘        └─────────────┘        └───────────┘
-                ▲                      ▲                     ▲
-                └──────────────────────┴─────────────────────┘
-                                       │
-                                 ┌─────▼──────┐
-                                 │  Common    │
-                                 └────────────┘
-```
+<img width="1300" height="630" alt="image" src="https://github.com/user-attachments/assets/9066cbcd-d743-42c6-83bf-8171cf5bd6e7" />
 
 | Layer | Contents |
 |-------|----------|
 | **Common** | `std_types.h`, `gpio_types.h`, `std_macros.h`, `ud_config.h` |
 | **MCAL-C** | `mcal_registers.h` — raw register definitions |
-| **MCAL** | DIO, Timers (TC0/TC1/TC2), ADC, USART, SPI, I²C, EEPROM |
-| **MCAL-G** | Interrupt control (`cli`/`sei`, INT0/INT1/INT2) |
+| **MCAL** | DIO |
+| **MCAL-G** | Interrupt control (`cli`/`sei`, INT0/INT1/INT2), Timers (TC0/TC1/TC2), ADC, USART, SPI, I²C, EEPROM |
 | **HAL-C** | Common HAL types (LED/BUTTON active type enums) |
 | **HAL** | LED, Button, 7-Segment, Keypad, LCD (4-bit & 8-bit) |
 | **STR** | Circular queue |
