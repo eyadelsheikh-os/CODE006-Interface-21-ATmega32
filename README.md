@@ -153,7 +153,7 @@ This application is where all the design decisions from the earlier projects con
 All projects target **ATmega32 @ 8 MHz** and are tested with:
 
 - **AVR-GCC** (Atmel Studio 7 / Microchip Studio)
-- **Proteus** for simulation (I²C multi-master emulation is unreliable in Proteus — see [Proteus caveats](#proteus-caveats))
+- **Proteus** for simulation.
 
 Configure `F_CPU` in `common/ud_config.h`. Each `.c` file has its own `main()` — build one project at a time.
 
